@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const{downloadFile} = require('cypress-downloadfile/lib/addPlugin')
 
+
 module.exports = defineConfig({
   e2e: {
     watchForFileChanges: false,
@@ -11,4 +12,10 @@ module.exports = defineConfig({
       on('task', {downloadFile})
     },
   },
-});
+  reporter: 'mochawesome',
+  reporterOptions: {
+    overwrite: false,
+    html: false,
+    json: true,
+  },
+})
