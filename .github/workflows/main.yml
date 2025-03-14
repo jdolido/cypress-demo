@@ -29,7 +29,7 @@ jobs:
         run: npx marge cypress/reports/${{matrix.browsers}}/merged-reports.json --reportDir cypress/reports/${{matrix.browsers}} -f "${{matrix.browsers}}-report.html"
 
       - name: Upload HTML Reports
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
             name: Cypress HTML Report ${{matrix.browsers}}
             path: cypress/reports/${{matrix.browsers}}
